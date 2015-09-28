@@ -4,18 +4,24 @@ import java.util.ArrayList;
 
 public class Hand {
 
-	public Hand(String string) {
-		// TODO Auto-generated constructor stub
+	private String player;
+	private ArrayList<Card> cards;
+	
+	public Hand(String rawHand) {
+		cards = new ArrayList<Card>();
+		String[] input = rawHand.split(" ");
+		this.player = input[0];
+		for(int x=1; x<=5;x++){
+			cards.add(new Card(input[x]));
+		}
 	}
 
 	public ArrayList<Card> getCards() {
-		// TODO Auto-generated method stub
-		return null;
+		return cards;
 	}
 
 	public String getPlayer() {
-		// TODO Auto-generated method stub
-		return null;
+		return player;
 	}
 
 }
