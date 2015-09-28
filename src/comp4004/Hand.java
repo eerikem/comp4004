@@ -124,4 +124,12 @@ public class Hand {
 		return getHighCard();
 	}
 
+	public String toString(){
+		String r = player;
+		for(Card c:cards){
+			r+= " "+c;
+		}
+		return r;
+	}
+	
 }

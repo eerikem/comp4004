@@ -36,5 +36,9 @@ public class Card {
 	public String getSuite() {
 		return suite;
 	}
+	
+	public String toString(){
+		return numbers.get(value) + suite;
+	}
 
 }

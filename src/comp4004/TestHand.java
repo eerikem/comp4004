@@ -6,12 +6,12 @@ import org.junit.Test;
 
 public class TestHand {
 
-	private final Hand fullHouse = new Hand("Test AceClubs AceSpades TwoDiamonds TwoSpades TwoClubs"); 
-	private final Hand emptyHand = new Hand("Empty AceClubs ThreeSpades FiveDiamonds TenHearts QueenSpades");
-	private final Hand twoPair = new Hand("FourHigh TwoClubs TwoSpades FourClubs FourSpades ThreeDiamonds");
-	private final Hand aces = new Hand("Aces AceSpades AceDiamonds AceClubs AceHearts KingHearts");
-	private final Hand straightFlush = new Hand("StrghtFlsh JackHearts TenHearts NineHearts EightHearts SevenHearts");
-	private final Hand lowStraight = new Hand("LowStraight AceSpades TwoDiamonds ThreeDiamonds FourDiamonds FiveDiamonds");
+	public static final Hand fullHouse = new Hand("Test AceClubs AceSpades TwoDiamonds TwoSpades TwoClubs"); 
+	public static final Hand emptyHand = new Hand("Empty AceClubs ThreeSpades FiveDiamonds TenHearts QueenSpades");
+	public static final Hand twoPair = new Hand("FourHigh TwoClubs TwoSpades FourClubs FourSpades ThreeDiamonds");
+	public static final Hand aces = new Hand("Aces AceSpades AceDiamonds AceClubs AceHearts KingHearts");
+	public static final Hand straightFlush = new Hand("StrghtFlsh JackHearts TenHearts NineHearts EightHearts SevenHearts");
+	public static final Hand lowStraight = new Hand("LowStraight AceSpades TwoDiamonds ThreeDiamonds FourDiamonds FiveDiamonds");
 	@Test
 	public void test() {
 		Hand h = new Hand("Pierre FiveHearts TwoDiamonds QueenSpades FourClubs AceHearts");

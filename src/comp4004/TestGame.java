@@ -8,9 +8,11 @@ public class TestGame {
 
 	@Test
 	public void test() {
-		String s = "";
+		String s = TestHand.twoPair + " " + TestHand.emptyHand;
 		Game g = new Game(s);
 		assertTrue(g.getHands().size()==2);
 	}
+	
+	
 
 }
