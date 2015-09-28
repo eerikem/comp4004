@@ -25,18 +25,41 @@ public class Hand {
 		return player;
 	}
 
-	public boolean hasPair() {
-		// TODO Auto-generated method stub
-		return false;
+	public int hasPair() {
+		for(Card c:cards){
+			ArrayList<Card> crds = new ArrayList<Card>(cards);
+			crds.remove(c);
+			if(pair(c,crds)!=null)return c.getValue();
+		}
+		return 0;
+	}
+	
+	private Card pair(Card c, ArrayList<Card> crds){
+		for(Card card:crds){
+			if(c.getValue()==card.getValue())
+				return card;
+		}
+	return null;
 	}
 
-	public boolean hasTriple() {
-		// TODO Auto-generated method stub
-		return false;
+	public int hasTriple() {
+		for(Card c:cards){
+			ArrayList<Card> crds = new ArrayList<Card>(cards);
+			crds.remove(c);
+			Card d = pair(c,crds);
+			if(d!= null){
+				crds.remove(d);
+				if(pair(c,crds)!=null)return c.getValue();
+			}
+		}
+		return 0;
 	}
 
 	public boolean isFullHouse() {
-		// TODO Auto-generated method stub
+		int triple = hasTriple();
+		int pair = hasPair();
+		if(triple > 0 && pair > 0 && triple != pair)
+			return true;
 		return false;
 	}
 

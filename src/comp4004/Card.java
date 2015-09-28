@@ -29,7 +29,7 @@ public class Card {
 			
 	}
 
-	public Object getValue() {
+	public int getValue() {
 		return value;
 	}
 
