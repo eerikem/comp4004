@@ -9,8 +9,15 @@ public class TestHand {
 	@Test
 	public void test() {
 		Hand h = new Hand("Pierre FiveHearts TwoDiamonds QueenSpades FourClubs AceHearts");
-		assertTrue(h.getPlayer()=="Pierre");
+		assertTrue(h.getPlayer().equals("Pierre"));
 		assertTrue(h.getCards().size()==5);
+	}
+	
+	@Test(expected=IllegalArgumentException.class)
+	public void testInvalidHands(){
+		new Hand("Frank FiveHearts TwoDiamonds QueenSpades");
+		new Hand("Billy FiveHearts TwoDiamonds QueenSpades FourClubs");
+		new Hand("Thatcher FiveHearts TwoDiamonds QueenSpades FourClubs badarg");
 	}
 
 }
