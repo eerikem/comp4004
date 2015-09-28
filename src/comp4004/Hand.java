@@ -105,4 +105,14 @@ public class Hand {
 		return 0;
 	}
 
+	public int isStraight() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	public int isFlush() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
 }

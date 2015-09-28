@@ -10,7 +10,7 @@ public class TestHand {
 	private final Hand emptyHand = new Hand("Empty AceClubs ThreeSpades FiveDiamonds TenHearts QueenSpades");
 	private final Hand twoPair = new Hand("FourHigh TwoClubs TwoSpades FourClubs FourSpades ThreeDiamonds");
 	private final Hand aces = new Hand("Aces AceSpades AceDiamonds AceClubs AceHearts KingHearts");
-	
+	private final Hand straightFlush = new Hand("StrghtFlsh JackHearts TenHearts NineHearts EightHearts SevenHearts");
 	@Test
 	public void test() {
 		Hand h = new Hand("Pierre FiveHearts TwoDiamonds QueenSpades FourClubs AceHearts");
@@ -58,4 +58,17 @@ public class TestHand {
 	public void testHighCard(){
 		assertTrue(emptyHand.getHighCard()==14);
 	}
+	
+	@Test
+	public void testIsStraight(){
+		assertTrue(straightFlush.isStraight()>0);
+		assertFalse(emptyHand.isStraight()>0);
+	}
+	
+	@Test
+	public void testIsFlush(){
+		assertTrue(straightFlush.isFlush()>0);
+		assertFalse(emptyHand.isFlush()>0);
+	}
+	
 }
