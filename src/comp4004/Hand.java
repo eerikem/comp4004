@@ -10,6 +10,7 @@ public class Hand {
 	public Hand(String rawHand) {
 		cards = new ArrayList<Card>();
 		String[] input = rawHand.split(" ");
+		if(input.length!=6)throw new IllegalArgumentException("Bad Hand Provided");
 		this.player = input[0];
 		for(int x=1; x<=5;x++){
 			cards.add(new Card(input[x]));
