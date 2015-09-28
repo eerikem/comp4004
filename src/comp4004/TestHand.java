@@ -8,6 +8,9 @@ public class TestHand {
 
 	private final Hand fullHouse = new Hand("Test AceClubs AceSpades TwoDiamonds TwoSpades TwoClubs"); 
 	private final Hand emptyHand = new Hand("Empty AceClubs ThreeSpades FiveDiamonds TenHearts QueenSpades");
+	private final Hand twoPair = new Hand("FourHigh TwoClubs TwoSpades FourClubs FourSpades ThreeDiamonds");
+	private final Hand aces = new Hand("Aces AceSpades AceDiamonds AceClubs AceHearts KingHearts");
+	
 	@Test
 	public void test() {
 		Hand h = new Hand("Pierre FiveHearts TwoDiamonds QueenSpades FourClubs AceHearts");
@@ -39,5 +42,20 @@ public class TestHand {
 		assertTrue(fullHouse.isFullHouse());
 		assertFalse(emptyHand.isFullHouse());
 	}
+
+	@Test
+	public void testIsTwoPair(){
+		assertTrue(twoPair.isTwoPair()>0);
+		assertFalse(twoPair.isTwoPair()>0);
+	}
 	
+	@Test
+	public void testIsFourOfKind(){
+		assertTrue(aces.isFourOfKind()>0);
+	}
+	
+	@Test
+	public void testHighCard(){
+		assertTrue(emptyHand.getHighCard()==14);
+	}
 }

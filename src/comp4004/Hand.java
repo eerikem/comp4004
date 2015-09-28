@@ -63,4 +63,19 @@ public class Hand {
 		return false;
 	}
 
+	public int isFourOfKind() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	public int getHighCard() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	public int isTwoPair() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
 }
