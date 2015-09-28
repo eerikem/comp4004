@@ -26,4 +26,15 @@ public class TestGame {
 		new Game(TestHand.fullHouse.toString());
 		new Game(TestHand.emptyHand+" "+TestHand.fullHouse+" "+TestHand.twoPair+" "+TestHand.aces+" "+TestHand.lowStraight);
 	}
+	
+	@Test(expected=IllegalArgumentException.class)
+	public void testBadCards(){
+		new Game(TestHand.fullHouse+" "+TestHand.straightFlush+" FourClubs");
+		new Game(TestHand.emptyHand+"FourHigh TwoClubs TwoSpades FourClubs");
+	}
+	
+	@Test(expected=IllegalArgumentException.class)
+	public void testDuplicateCards(){
+		new Game(TestHand.fullHouse+" "+TestHand.fullHouse);
+	}
 }
