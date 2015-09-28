@@ -112,6 +112,7 @@ public class Hand {
 			x += high - c.getValue();
 		}
 		if(x==10)return high;
+		if(x==42)return 5;
 		return 0;
 	}
 
