@@ -15,8 +15,9 @@ public class TestGame {
 	
 	@Test
 	public void testRank(){
-		String s = TestHand.twoPair + " " + TestHand.emptyHand;
+		String s = TestHand.emptyHand+" "+TestHand.fullHouse+" "+TestHand.twoPair+" "+TestHand.aces;
+		String r = TestHand.aces+" "+TestHand.fullHouse+" "+TestHand.twoPair+" "+TestHand.emptyHand;
 		Game g = new Game(s);
-		assertTrue(g.rank().equals(s));
+		assertTrue(g.rank().equals(r));
 	}
 }

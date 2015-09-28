@@ -131,5 +131,36 @@ public class Hand {
 		}
 		return r;
 	}
+
+	public boolean trumps(Hand hand) {
+		return rankHand()>hand.rankHand();
+	}
+	
+	private int rankHand(){
+		if(isFlush()>0){
+			if(isStraight()>0){
+				return 8;
+			}else{
+				return 5;
+			}
+		}else{
+			if(isStraight()>0){
+				return 4;
+			}
+		}
+		if(isFourOfKind()>0){
+			return 7;
+		}else if(isFullHouse()){
+				return 6;
+			}else if(hasTriple()>0){
+				return 3;
+		}else if(isTwoPair()>0){
+			return 2;
+		}else if(hasPair()>0){
+			return 1;}
+		else{
+			return 0;
+		}
+	}
 	
 }

@@ -25,8 +25,33 @@ public class Game {
 	}
 
 	public String rank() {
-		// TODO Auto-generated method stub
-		return null;
+		ArrayList<Hand> ranked = new ArrayList<Hand>();
+		ranked.add(hands.get(0));
+		for (int x = 1; x < hands.size(); x++) {
+			Hand h = hands.get(x);
+			boolean added = false;
+			for (int y = ranked.size(); y > 0; y--) {
+				if (!h.trumps(ranked.get(y - 1))) {
+					ranked.add(y, h);
+					added = true;
+				}
+			}
+			if (!added)
+				ranked.add(0, h);
+		}
+	
+		String result = ranked.get(0).toString();
+		for(int z = 1;z<ranked.size();z++){
+			result+=" "+ranked.get(z);
+		}
+		print(ranked);
+		return result;
 	}
 	
+	private void print(ArrayList<Hand> hands){
+		for(int x = 0; x<hands.size();x++){
+			System.out.println((x+1)+" "+hands.get(x));
+		}
+	}
+
 }
