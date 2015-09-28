@@ -33,7 +33,7 @@ public class Hand {
 		}
 		return 0;
 	}
-	
+		
 	private Card pair(Card c, ArrayList<Card> crds){
 		for(Card card:crds){
 			if(c.getValue()==card.getValue())
@@ -64,17 +64,44 @@ public class Hand {
 	}
 
 	public int isFourOfKind() {
-		// TODO Auto-generated method stub
+		for(Card c:cards){
+			ArrayList<Card> crds = new ArrayList<Card>(cards);
+			crds.remove(c);
+			Card d = pair(c,crds);
+			if(d!= null){
+				crds.remove(d);
+				Card b = pair(c,crds);
+				if(b!=null){
+					crds.remove(b);
+					if(pair(c,crds)!=null)return c.getValue();
+				}
+			}
+		}
 		return 0;
 	}
 
 	public int getHighCard() {
-		// TODO Auto-generated method stub
-		return 0;
+		int high = 0;
+		for(Card c:cards){
+			if(c.getValue()>high)high=c.getValue();
+		}
+		return high;
 	}
 
 	public int isTwoPair() {
-		// TODO Auto-generated method stub
+		int pair = hasPair();
+		if (pair > 0) {
+			ArrayList<Card> crds = new ArrayList<Card>(cards);
+			for (Card c : crds) {
+				if (c.getValue() != pair) {
+					int p = pair(c, crds).getValue();
+					if (p > 0){
+						if(pair>p)return pair;
+						else return p;
+					}
+				}
+			}
+		}
 		return 0;
 	}
 

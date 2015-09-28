@@ -46,7 +46,7 @@ public class TestHand {
 	@Test
 	public void testIsTwoPair(){
 		assertTrue(twoPair.isTwoPair()>0);
-		assertFalse(twoPair.isTwoPair()>0);
+		assertFalse(emptyHand.isTwoPair()>0);
 	}
 	
 	@Test
