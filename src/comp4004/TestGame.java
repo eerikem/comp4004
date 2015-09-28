@@ -13,6 +13,10 @@ public class TestGame {
 		assertTrue(g.getHands().size()==2);
 	}
 	
-	
-
+	@Test
+	public void testRank(){
+		String s = TestHand.twoPair + " " + TestHand.emptyHand;
+		Game g = new Game(s);
+		assertTrue(g.rank().equals(s));
+	}
 }

@@ -23,5 +23,10 @@ public class Game {
 	public ArrayList<Hand> getHands() {
 		return hands;
 	}
+
+	public String rank() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 	
 }
