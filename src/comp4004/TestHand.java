@@ -11,6 +11,7 @@ public class TestHand {
 	private final Hand twoPair = new Hand("FourHigh TwoClubs TwoSpades FourClubs FourSpades ThreeDiamonds");
 	private final Hand aces = new Hand("Aces AceSpades AceDiamonds AceClubs AceHearts KingHearts");
 	private final Hand straightFlush = new Hand("StrghtFlsh JackHearts TenHearts NineHearts EightHearts SevenHearts");
+	private final Hand lowStraight = new Hand("LowStraight AceSpades TwoDiamonds ThreeDiamonds FourDiamonds FiveDiamonds");
 	@Test
 	public void test() {
 		Hand h = new Hand("Pierre FiveHearts TwoDiamonds QueenSpades FourClubs AceHearts");
@@ -27,13 +28,13 @@ public class TestHand {
 	
 	@Test
 	public void testHasPair(){ 
-		assertTrue(fullHouse.hasPair()>0);
+		assertTrue(fullHouse.hasPair()==14);
 		assertFalse(emptyHand.hasPair()>0);
 	}
 
 	@Test
 	public void testHasTriple(){
-		assertTrue(fullHouse.hasTriple()>0);
+		assertTrue(fullHouse.hasTriple()==2);
 		assertFalse(emptyHand.hasTriple()>0);
 	}
 
@@ -45,13 +46,13 @@ public class TestHand {
 
 	@Test
 	public void testIsTwoPair(){
-		assertTrue(twoPair.isTwoPair()>0);
+		assertTrue(twoPair.isTwoPair()==4);
 		assertFalse(emptyHand.isTwoPair()>0);
 	}
 	
 	@Test
 	public void testIsFourOfKind(){
-		assertTrue(aces.isFourOfKind()>0);
+		assertTrue(aces.isFourOfKind()==14);
 	}
 	
 	@Test
@@ -61,13 +62,14 @@ public class TestHand {
 	
 	@Test
 	public void testIsStraight(){
-		assertTrue(straightFlush.isStraight()>0);
+		assertTrue(straightFlush.isStraight()==11);
 		assertFalse(emptyHand.isStraight()>0);
+		assertTrue(lowStraight.isStraight()==5);
 	}
 	
 	@Test
 	public void testIsFlush(){
-		assertTrue(straightFlush.isFlush()>0);
+		assertTrue(straightFlush.isFlush()==11);
 		assertFalse(emptyHand.isFlush()>0);
 	}
 	
