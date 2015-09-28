@@ -12,5 +12,9 @@ public class TestCard {
 		assertEquals( 2, c.getValue());
 		assertEquals( "Clubs", c.getSuite());
 	}
-
+	
+	@Test(expected=IllegalArgumentException.class)
+	public void testBadCard() {
+		new Card("Invalid");
+	}
 }
