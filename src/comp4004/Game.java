@@ -9,6 +9,8 @@ public class Game {
 	public Game(String allPlayers) {
 		hands= new ArrayList<Hand>();
 		String[] input = allPlayers.split(" ");
+		int numPlayers = (input.length)/6;
+		if(numPlayers<2||numPlayers>4)throw new IllegalArgumentException("Game must have 2 to 4 players.");
 		String hand = input[0];
 		for(int x = 1; x<input.length;x++){
 			hand = hand + " " + input[x];
