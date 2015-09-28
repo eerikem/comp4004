@@ -20,4 +20,10 @@ public class TestGame {
 		Game g = new Game(s);
 		assertTrue(g.rank().equals(r));
 	}
+	
+	@Test(expected=IllegalArgumentException.class)
+	public void testNumPlayers(){
+		new Game(TestHand.fullHouse.toString());
+		new Game(TestHand.emptyHand+" "+TestHand.fullHouse+" "+TestHand.twoPair+" "+TestHand.aces+" "+TestHand.lowStraight);
+	}
 }
