@@ -2,3 +2,23 @@ Comp 4004 Assignment #1
 
 Eric Kemp
 100752783
+
+https://github.com/eerikem/comp4004
+
+DEPENDENCY: apache.commons.lang vs 3.4
+download it here: https://commons.apache.org/proper/commons-lang/
+
+
+The testcases corresponding to the 8 listed are as follows:
+
+1: testDuplicateCards
+2: testNumPlayers
+3: testInvalidHands
+4: testRank
+5: 
+6: testBadCard
+7: testInvalidHands
+8: testInvalidHands
+
+The remaining test cases, particularly in TestHand.java
+ are all to test the ranking of Hands.
