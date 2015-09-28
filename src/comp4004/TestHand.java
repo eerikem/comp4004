@@ -6,9 +6,9 @@ import org.junit.Test;
 
 public class TestHand {
 
-	public static final Hand fullHouse = new Hand("Test AceClubs AceSpades TwoDiamonds TwoSpades TwoClubs"); 
-	public static final Hand emptyHand = new Hand("Empty AceClubs ThreeSpades FiveDiamonds TenHearts QueenSpades");
-	public static final Hand twoPair = new Hand("FourHigh TwoClubs TwoSpades FourClubs FourSpades ThreeDiamonds");
+	public static final Hand fullHouse = new Hand("Test SixClubs SixSpades TwoDiamonds TwoHearts TwoClubs"); 
+	public static final Hand emptyHand = new Hand("Empty SevenHearts TenSpades FiveDiamonds TenHearts QueenSpades");
+	public static final Hand twoPair = new Hand("FourHigh ThreeClubs ThreeSpades FourClubs FourSpades SixDiamonds");
 	public static final Hand aces = new Hand("Aces AceSpades AceDiamonds AceClubs AceHearts KingHearts");
 	public static final Hand straightFlush = new Hand("StrghtFlsh JackHearts TenHearts NineHearts EightHearts SevenHearts");
 	public static final Hand lowStraight = new Hand("LowStraight AceSpades TwoDiamonds ThreeDiamonds FourDiamonds FiveDiamonds");
@@ -57,7 +57,7 @@ public class TestHand {
 	
 	@Test
 	public void testHighCard(){
-		assertTrue(emptyHand.getHighCard()==14);
+		assertTrue(emptyHand.getHighCard()==12);
 	}
 	
 	@Test

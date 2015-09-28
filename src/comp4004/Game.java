@@ -9,6 +9,8 @@ public class Game {
 	public Game(String allPlayers) {
 		hands= new ArrayList<Hand>();
 		String[] input = allPlayers.split(" ");
+		if(hasDuplicates(input))throw new IllegalArgumentException("All inputs must be unique.");
+		if(input.length%6!=0)throw new IllegalArgumentException("Incorrect number of arguments passed to game.");
 		int numPlayers = (input.length)/6;
 		if(numPlayers<2||numPlayers>4)throw new IllegalArgumentException("Game must have 2 to 4 players.");
 		String hand = input[0];
@@ -22,6 +24,19 @@ public class Game {
 		}
 	}
 
+	//Check for duplicate cards
+	private boolean hasDuplicates(String[] cards){
+		for(int x=0;x<cards.length;x++){
+			for(int y=x+1;y<cards.length;y++){
+				if(cards[x].equals(cards[y])){
+					System.out.println("WARNING: Duplicated "+cards[x]);
+					return true;
+				}
+			}
+		}
+		return false;
+	}
+	
 	public ArrayList<Hand> getHands() {
 		return hands;
 	}
