@@ -25,4 +25,19 @@ public class Hand {
 		return player;
 	}
 
+	public boolean hasPair() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	public boolean hasTriple() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	public boolean isFullHouse() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
 }
