@@ -106,13 +106,21 @@ public class Hand {
 	}
 
 	public int isStraight() {
-		// TODO Auto-generated method stub
+		int high = getHighCard();
+		int x = 0;
+		for(Card c:cards){
+			x += high - c.getValue();
+		}
+		if(x==10)return high;
 		return 0;
 	}
 
 	public int isFlush() {
-		// TODO Auto-generated method stub
-		return 0;
+		String suite = cards.get(0).getSuite();
+		for(Card c:cards){
+			if(!c.getSuite().equals(suite))return 0;
+		}
+		return getHighCard();
 	}
 
 }

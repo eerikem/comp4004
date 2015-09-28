@@ -33,7 +33,7 @@ public class Card {
 		return value;
 	}
 
-	public Object getSuite() {
+	public String getSuite() {
 		return suite;
 	}
 
